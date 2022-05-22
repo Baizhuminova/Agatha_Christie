@@ -1,0 +1,587 @@
+nav{
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 70px;
+    background: black;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+}
+nav .navbar{
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    /* background: red; */
+    padding: 0 50px;
+}
+.navbar .logo a{
+    font-family: Cinzel;
+    font-size: 37px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 200;
+    padding-right: 65px;
+}
+nav .navbar .nav-links{
+    line-height: 70px;
+    height: 100%;
+}
+nav .navbar .links{
+    display: flex;
+}
+nav .navbar .links li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0px 40px;
+    font-family: Nunito;
+}
+nav .navbar .links li a{
+    height: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Nunito;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+    transform: rotate(180deg);
+}
+
+nav .navbar .links li .arrow{
+    height: 100%;
+    width: 22px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+nav .navbar .links li .sub-menu{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    line-height: 40px;
+    background: black;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
+    display: none;
+    z-index: 2;
+}
+nav .navbar .links li:hover .htmlCss-sub-menu,
+nav .navbar .links li:hover .js-sub-menu{
+    display: block;
+}
+.navbar .links li .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.navbar .links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+.navbar .links li .sub-menu .more-arrow{
+    line-height: 40px;
+}
+.navbar .links li .htmlCss-more-sub-menu{
+}
+.navbar .links li .sub-menu .more-sub-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    border-radius: 0 4px 4px 4px;
+    z-index: 1;
+    display: none;
+}
+.links li .sub-menu .more:hover .more-sub-menu{
+    display: block;
+}
+.navbar .search-box{
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+.navbar .search-box i{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.navbar .search-box .input-box{
+    position: absolute;
+    right: calc(100% - 40px);
+    top: 80px;
+    height: 60px;
+    width: 300px;
+    background: black;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+.navbar.showInput .search-box .input-box{
+    top: 65px;
+    opacity: 1;
+    pointer-events: auto;
+    background: black;
+}
+.search-box .input-box::before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: black;
+    right: 10px;
+    top: -6px;
+    transform: rotate(45deg);
+}
+.search-box .input-box input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 280px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border: none;
+}
+.navbar .nav-links .sidebar-logo{
+    display: none;
+}
+.navbar .bx-menu{
+    display: none;
+}
+@media (max-width:920px) {
+    nav .navbar{
+        max-width: 100%;
+        padding: 0 25px;
+    }
+
+    nav .navbar .logo a{
+        font-size: 27px;
+    }
+    nav .navbar .links li{
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+    nav .navbar .links li a{
+        font-size: 15px;
+    }
+}
+@media (max-width:800px){
+    nav{
+    }
+    .navbar .bx-menu{
+        display: block;
+    }
+    nav .navbar .nav-links{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        display: block;
+        max-width: 270px;
+        width: 100%;
+        background:  black;
+        line-height: 40px;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
+        z-index: 1000;
+    }
+    .navbar .nav-links .sidebar-logo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .sidebar-logo .logo-name{
+        font-size: 25px;
+        color: #fff;
+    }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+        font-size: 25px;
+        color: #fff;
+    }
+    nav .navbar .links{
+        display: block;
+        margin-top: 20px;
+    }
+    nav .navbar .links li .arrow{
+        line-height: 40px;
+    }
+    nav .navbar .links li{
+        display: block;
+    }
+    nav .navbar .links li .sub-menu{
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        display: none;
+    }
+    nav .navbar .links li .sub-menu li{
+        border-bottom: none;
+
+    }
+    .navbar .links li .sub-menu .more-sub-menu{
+        display: none;
+        position: relative;
+        left: 0;
+    }
+    .navbar .links li .sub-menu .more-sub-menu li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .links li:hover .htmlcss-arrow,
+    .links li:hover .js-arrow{
+        transform: rotate(0deg);
+    }
+    .navbar .links li .sub-menu .more-sub-menu{
+        display: none;
+    }
+    .navbar .links li .sub-menu .more span{
+        display: flex;
+        align-items: center;
+    }
+
+    .links li .sub-menu .more:hover .more-sub-menu{
+        display: none;
+    }
+    nav .navbar .links li:hover .htmlCss-sub-menu,
+    nav .navbar .links li:hover .js-sub-menu{
+        display: none;
+    }
+    .navbar .nav-links.show1 .links .htmlCss-sub-menu,
+    .navbar .nav-links.show3 .links .js-sub-menu,
+    .navbar .nav-links.show2 .links .more .more-sub-menu{
+        display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+    }
+    .navbar .nav-links.show2 .links .more-arrow{
+        transform: rotate(90deg);
+    }
+}
+@media (max-width:370px){
+    nav .navbar .nav-links{
+        max-width: 100%;
+    }
+}
+
+
+   /*Main page*/
+
+.main_page{
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-image:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(../picture/AgataChristi.png);
+    /*overflow-x: hidden;*/
+}
+.main_text h1 {
+    position: absolute;
+    left: calc(50% - 1015px/2 + 324px);
+    top: calc(50% - 411px/2 + 75px);
+    font-family:'Courier New';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 170px;
+    /* or 113% */
+    color: #FFFFFF;
+}
+.main_text p {
+    position: absolute;
+    left: 71.34%;
+    right: 11.85%;
+    top: 25.36%;
+    bottom: 65.16%;
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 170px;
+    color: bisque;
+}
+.main_text p1{
+    /* is full of secrets */
+    position: absolute;
+    left: 71.44%;
+    right: 20.14%;
+    top: 39.78%;
+    bottom: 52.03%;
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    /* or 111% */
+    color: #FFFFFF;
+}
+.main_text p2{
+    /* endless riddles */
+    position: absolute;
+    left: 51%;
+    right: 26.2%;
+    top: 65.74%;
+    bottom: 18.93%;
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 170px;
+    color: bisque;
+}
+
+.main_text p3{
+    position: absolute;
+    left: 2.61%;
+    right: 67.62%;
+    top: 82.58%;
+    bottom: -6.5%;
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: #FFFFFF;
+
+}
+            /*css animate*/
+
+.slide-left{
+    animation: slideleft 1.5s linear forwards;
+}
+@keyframes  slideleft {
+    0%{
+        transform: translate(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+.slide{
+    box-sizing: border-box;
+    height:100px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+            /*button*/
+.button2{
+    position: absolute;
+    width: 120px;
+    height: 47px;
+    left: 400px;
+    top: 660px;
+    font-family: 'Cinzel';
+    border: 2px solid #C4C4C4;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(to right, transparent 50%, #C4C4C4 50%);
+    background-size: 200%;
+    background-position: left;
+    transition:background-position 0.5s;
+}
+
+.button2:hover{
+    background-position: right;
+    color: #000;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col:nth-child(2),  .col:nth-child(3){
+    flex-basis: 15%;
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+footer{
+    margin-top: 30px;
+    width: 100%;
+    bottom: 0;
+    background: linear-gradient(to right, #3E3D37, #2D3143);
+    color: #fff;
+    background-color: white;
+    padding-bottom: 70px;
+    padding-top: 40px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+    font-family: 'Cinzel';
+
+
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+ul {
+       display: block;
+       list-style-type: disc;
+       margin-block-start: 1em;
+       margin-block-end: 1em;
+       margin-inline-start: 0px;
+       margin-inline-end: 0px;
+       padding-inline-start: 0px;
+   }
+
+ul li{
+
+    list-style:none;
+    margin-bottom: 12px;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+form{
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-right: 90px;
+    margin-bottom: 50px;
+}
+form input{
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: 0;
+    outline: none;
+}
+.social-icons .fab{
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin-right: 18px;
+}
+hr{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+.underline{
+    width: 100%;
+    height: 2px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    top: 42px;
+    left: 0;
+
+}
+.button1{
+    position: absolute;
+    border: 2px solid #C4C4C4;
+    color: #fff;
+    margin-left: 280px;
+    background: none;
+}
+.button1:hover{
+    background-position: right;
+    color: #ffffff;
+    background: #2D3143;
+    opacity: .7;
+}
+a{
+    list-style:none;
+    text-decoration: none;
+    color: white;
+}
+
+/*Library*/
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.6rem 0.7rem;
+    border-radius: .5rem;
+    color: white;
+    background: none;
+    font-size: 0.8rem;
+    background: #2D3143;
+    cursor: pointer;
+}
+#home{
+    padding: 5rem 9%;
+}
+.home{
+    background: url(../picture/9efe2c5747a2cec4bf561815c1726285.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.home .row .content{
+    flex: 1 1 42rem;
+}
+   .home .row .books-slider{
+       flex: 1 1 42rem;
+       text-align: center;
+       margin-top: 2rem;
+   }
+
+   .home .row .books-slider a img{
+       height: 19rem;
+       padding-left: 30px;
+       margin-bottom: 25px;
+   }
+   .home .row .books-slider a:hover img{
+       transform:scale(.9) ;
+   }
+   .home .row .books-slider .stand{
+       width: 100%;
+       margin-top: -2rem;
+   }
